@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>client</title>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+  $(document).ready(function(){
+    $('.add-to-cart').on('click', function() {
+      var cart = $('.shopping-cart');
+      var imgtodrag = $(this).parent('.item').find("img").eq(0);
+      if (imgtodrag) {
+        var imgclone = imgtodrag.clone()
+          .offset({
+            top: imgtodrag.offset().top,
+            left: imgtodrag.offset().left
+          })
+          .css({
+            'opacity': '0.5',
+            'position': 'absolute',
+            'height': '150px',
+            'width': '150px',
+            'z-index': '100'
+          })
+          .appendTo($('body'))
+          .animate({
+            'top': cart.offset().top + 10,
+            'left': cart.offset().left + 10,
+            'width': 75,
+            'height': 75
+          }, 1000, 'easeInOutExpo');
+
+        setTimeout(function() {
+          cart.effect("shake", {
+            times: 2
+          }, 200);
+        }, 1500);
+
+        imgclone.animate({
+          'width': 0,
+          'height': 0
+        }, function() {
+          $(this).detach()
+        });
+      }
+    });
+  })
+  </script>
+</html>
