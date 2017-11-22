@@ -20,12 +20,12 @@
       </div>
       <div class="cont_back_info">
         <div class="cont_img_back_grey">
-          <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+          <img src="https://hacktiv8.com/img/covers/home_upper--md5--f276906ac97217a9dfb770d6321a4d47.jpg" alt="" />
         </div>
       </div>
       <div class="cont_forms">
         <div class="cont_img_back_">
-          <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+          <img src="https://hacktiv8.com/img/covers/home_upper--md5--f276906ac97217a9dfb770d6321a4d47.jpg" alt="" />
         </div>
         <div class="cont_form_login">
           <a href="#" @click="ocultar_login_sign_up()"><i class="material-icons">Close</i></a>
@@ -496,4 +496,5 @@ background text
   margin: 10px;
   margin-left: 30px;
 }
+
 </style>

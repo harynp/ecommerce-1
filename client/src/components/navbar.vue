@@ -12,7 +12,11 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
         </li>
+        <li class="nav-item active">
+          <router-link class="nav-link" to="/Login">Login</router-link>
+        </li>
       </ul>
+
       <span><i class="shopping-cart" data-toggle="modal" data-target="#exampleModal"></i></span>{{ count }}
     </div>
   </nav>

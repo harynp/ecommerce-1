@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import router from '../router'
 Vue.use(Vuex)
 
 const http = axios.create({
@@ -59,6 +59,10 @@ const mutations = {
   },
   getAllTransactions (state,payload) {
     state.transaction = payload;
+  },
+  removeTransaction (state,payload) {
+    const idx = state.transaction.findIndex((transaction) => transaction._id === payload)
+    state.transaction.splice(idx, 1)
   }
 }
 
@@ -184,9 +188,17 @@ const actions = {
     .catch(err => {
       console.error(err);
     })
+  },
+  deleteTransaction ({commit}, transactionsId) {
+    http.delete('/transactions/'+ transactionsId._id)
+    .then(({data}) => {
+      commit('removeTransaction', data._id)
+    })
+    .catch(err => {
+      console.log('ERROR TRANSACTIONS',err);
+    })
   }
 }
-
 
 const store = new Vuex.Store({
   state,
