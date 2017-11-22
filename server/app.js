@@ -29,7 +29,7 @@ app.use('/users', users);
 app.use('/items', items);
 app.use('/carts', carts);
 app.use('/transactions', transactions);
-mongoose.connect('mongodb://localhost/ecommerce', function (err,db) {
+mongoose.connect('mongodb://harynp:harynp@pratice-shard-00-00-vajls.mongodb.net:27017,pratice-shard-00-01-vajls.mongodb.net:27017,pratice-shard-00-02-vajls.mongodb.net:27017/test?ssl=true&replicaSet=Pratice-shard-0&authSource=admin', function (err,db) {
   if (err) {
     console.log('TIDAK TERHUBUNG KE DATABASE!');
   } else {
